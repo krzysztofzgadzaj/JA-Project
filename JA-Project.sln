@@ -6,9 +6,12 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JA-Project", "JA-Project\JA-Project.csproj", "{96B8FA3B-35DC-4635-84CA-078619340476}"
 	ProjectSection(ProjectDependencies) = postProject
 		{72686938-641E-4025-A4C8-91C4D5BB50F6} = {72686938-641E-4025-A4C8-91C4D5BB50F6}
+		{43E8D17D-1563-456E-BDEB-7105F50E2E32} = {43E8D17D-1563-456E-BDEB-7105F50E2E32}
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "C-Dll", "C-Dll\C-Dll.csproj", "{72686938-641E-4025-A4C8-91C4D5BB50F6}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "AsmDll2", "AsmDll2\AsmDll2.vcxproj", "{43E8D17D-1563-456E-BDEB-7105F50E2E32}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -44,6 +47,16 @@ Global
 		{72686938-641E-4025-A4C8-91C4D5BB50F6}.Release|x64.Build.0 = Release|Any CPU
 		{72686938-641E-4025-A4C8-91C4D5BB50F6}.Release|x86.ActiveCfg = Release|Any CPU
 		{72686938-641E-4025-A4C8-91C4D5BB50F6}.Release|x86.Build.0 = Release|Any CPU
+		{43E8D17D-1563-456E-BDEB-7105F50E2E32}.Debug|Any CPU.ActiveCfg = Debug|Win32
+		{43E8D17D-1563-456E-BDEB-7105F50E2E32}.Debug|x64.ActiveCfg = Debug|x64
+		{43E8D17D-1563-456E-BDEB-7105F50E2E32}.Debug|x64.Build.0 = Debug|x64
+		{43E8D17D-1563-456E-BDEB-7105F50E2E32}.Debug|x86.ActiveCfg = Debug|x64
+		{43E8D17D-1563-456E-BDEB-7105F50E2E32}.Debug|x86.Build.0 = Debug|x64
+		{43E8D17D-1563-456E-BDEB-7105F50E2E32}.Release|Any CPU.ActiveCfg = Release|Win32
+		{43E8D17D-1563-456E-BDEB-7105F50E2E32}.Release|x64.ActiveCfg = Release|x64
+		{43E8D17D-1563-456E-BDEB-7105F50E2E32}.Release|x64.Build.0 = Release|x64
+		{43E8D17D-1563-456E-BDEB-7105F50E2E32}.Release|x86.ActiveCfg = Release|Win32
+		{43E8D17D-1563-456E-BDEB-7105F50E2E32}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

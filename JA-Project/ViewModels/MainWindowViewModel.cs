@@ -37,6 +37,10 @@ namespace JA_Project
         #endregion
 
 
+        [DllImport(@"..\..\..\x64\Debug\AsmDll2.dll")]
+        public static extern unsafe void filterProc(IntPtr a, int lenght);
+
+
         #region Private variables
 
         private string imagePath;
@@ -55,11 +59,25 @@ namespace JA_Project
 
         public MainWindowViewModel()
         {
+            int[] tab = new int[2] { 10, 20 };
+
+            IntPtr p = new IntPtr();
+
+            p = Marshal.AllocHGlobal(sizeof(int) * 2);
+
+            Marshal.Copy(tab, 0, p, 2);
+
+            filterProc(p, 2);
+
+            var one = Marshal.ReadInt32(p);
+            var two = Marshal.ReadInt32(p + 4);
+
             LoadPictureCommand = new RelayCommand(() => LoadPicture());
-            ExtendPictureCommand = new RelayCommand(() => ExtendPicture());
+            ExtendPictureCommand = new RelayCommand(() => ExtendPicture());    
         }
 
         #endregion
+
 
         #region Private functions
         
@@ -76,6 +94,7 @@ namespace JA_Project
             }
 
             OnPropertyChanged("OriginalImage");
+
         }
 
         private void ExtendPicture()

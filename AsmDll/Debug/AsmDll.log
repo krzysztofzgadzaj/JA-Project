@@ -1,0 +1,4 @@
+﻿  pch.cpp
+  dllmain.cpp
+AsmDll.def : error LNK2001: unresolved external symbol HEHEHE
+D:\Studia sem. 5\JA\JA-Project\JA-Project\Debug\AsmDll.lib : fatal error LNK1120: 1 unresolved externals

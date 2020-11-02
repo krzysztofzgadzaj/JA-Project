@@ -1,0 +1,6 @@
+﻿  Assembling AsmDll.asm...
+  pch.cpp
+  dllmain.cpp
+     Creating library D:\Studia sem. 5\JA\JA-Project\JA-Project\x64\Debug\AsmDll2.lib and object D:\Studia sem. 5\JA\JA-Project\JA-Project\x64\Debug\AsmDll2.exp
+AsmDll2.exp : warning LNK4070: /OUT:JAAsm.dll directive in .EXP differs from output filename 'D:\Studia sem. 5\JA\JA-Project\JA-Project\x64\Debug\AsmDll2.dll'; ignoring directive
+  AsmDll2.vcxproj -> D:\Studia sem. 5\JA\JA-Project\JA-Project\x64\Debug\AsmDll2.dll

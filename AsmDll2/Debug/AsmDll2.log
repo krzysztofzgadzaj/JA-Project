@@ -1,0 +1,29 @@
+﻿  Assembling AsmDll.asm...
+AsmDll.asm(4): error A2013: .MODEL must precede this directive
+AsmDll.asm(28): error A2034: must be in segment block : filterProc
+AsmDll.asm(30): error A2034: must be in segment block
+AsmDll.asm(31): error A2034: must be in segment block
+AsmDll.asm(33): error A2034: must be in segment block
+AsmDll.asm(34): error A2034: must be in segment block
+AsmDll.asm(35): error A2034: must be in segment block
+AsmDll.asm(37): error A2034: must be in segment block
+AsmDll.asm(38): error A2034: must be in segment block
+AsmDll.asm(40): error A2034: must be in segment block
+AsmDll.asm(41): error A2034: must be in segment block
+AsmDll.asm(43): error A2034: must be in segment block
+AsmDll.asm(44): error A2034: must be in segment block
+AsmDll.asm(45): error A2034: must be in segment block
+AsmDll.asm(47): error A2034: must be in segment block
+AsmDll.asm(48): error A2034: must be in segment block
+AsmDll.asm(49): error A2034: must be in segment block
+AsmDll.asm(50): error A2034: must be in segment block
+AsmDll.asm(51): error A2034: must be in segment block
+AsmDll.asm(52): error A2034: must be in segment block
+AsmDll.asm(53): error A2034: must be in segment block
+AsmDll.asm(55): error A2034: must be in segment block
+AsmDll.asm(57): error A2034: must be in segment block
+AsmDll.asm(59): error A2034: must be in segment block
+AsmDll.asm(60): error A2034: must be in segment block
+AsmDll.asm(62): error A2034: must be in segment block
+AsmDll.asm(64): fatal error A1010: unmatched block nesting : filterProc
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\BuildCustomizations\masm.targets(70,5): error MSB3721: The command "ml.exe /c /nologo /Zi /Fo"Debug\AsmDll.obj" /W3 /errorReport:prompt  /TaAsmDll.asm" exited with code 1.

@@ -1,0 +1,8 @@
+D:\Studia sem. 5\JA\JA-Project\JA-Project\C-Dll\bin\Release\C-Dll.dll
+D:\Studia sem. 5\JA\JA-Project\JA-Project\C-Dll\bin\Release\C-Dll.pdb
+D:\Studia sem. 5\JA\JA-Project\JA-Project\C-Dll\bin\Release\WindowsBase.dll
+D:\Studia sem. 5\JA\JA-Project\JA-Project\C-Dll\obj\Release\C-Dll.csprojAssemblyReference.cache
+D:\Studia sem. 5\JA\JA-Project\JA-Project\C-Dll\obj\Release\C-Dll.csproj.CoreCompileInputs.cache
+D:\Studia sem. 5\JA\JA-Project\JA-Project\C-Dll\obj\Release\C-Dll.csproj.CopyComplete
+D:\Studia sem. 5\JA\JA-Project\JA-Project\C-Dll\obj\Release\C-Dll.dll
+D:\Studia sem. 5\JA\JA-Project\JA-Project\C-Dll\obj\Release\C-Dll.pdb
