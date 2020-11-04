@@ -26,22 +26,36 @@
 
 
 filterProc PROC
+
+				mov r14, rdx
 				
-
-			start:
-				mov R8, [RCX]	
-				add R8, 15
-				mov [RCX], R8
-
-				add RCX, 4
-
-				dec RDX
-
-				cmp RDX, 0
-				JNE start
+				mov r10, [rcx]
+				mov r11, [rcx + 1]
+				mov r12, [rcx + 2]
+				mov r13, [rcx + 3]
 
 				
+			
+			siema:
 				
+
+				mov [r14], r10
+				
+				inc r14
+
+				mov [r14], r11
+				inc r14
+
+				mov [r14], r12
+				inc r14
+
+				mov [r14], r13
+				inc r14
+
+				sub r8, 1
+				cmp r8, 0
+				jg siema
+
 
 				RET										; return from procedure
 

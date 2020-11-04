@@ -12,23 +12,26 @@ namespace Siema
 {
     public class ImageExtender
     {
-        public static Bitmap Extend(string filePath, float scalar)
+        public static void Extend(ref Byte[,,] srcByteArray, ref Byte[,,] dstByteArray, int width, float ratio, int currentIndex, int partForThread)
         {
-            Bitmap src = new Bitmap(filePath);
-            Bitmap dst = new Bitmap((int)(src.Width * scalar), (int)(src.Height * scalar));
 
-            double ratio = 1 / scalar;
+            int newXParam;
+            int newYParam;
 
-            for (int x = 0; x < dst.Width; x++)
+            for (int x = 0; x < width; x++)
             {
-                for (int y = 0; y < dst.Height; y++)
+                for (int y = currentIndex; y < currentIndex + partForThread; y++)
                 {
-                    Color color = src.GetPixel((int)(x * ratio), (int)(y * ratio));
-                    dst.SetPixel(x, y, color);
+                    newXParam = (int) (x * ratio);
+                    newYParam = (int) (y * ratio);
+                    
+                    dstByteArray[x, y, 0] = srcByteArray[newXParam, newYParam, 0];
+                    dstByteArray[x, y, 1] = srcByteArray[newXParam, newYParam, 1];
+                    dstByteArray[x, y, 2] = srcByteArray[newXParam, newYParam, 2];
+                    dstByteArray[x, y, 3] = srcByteArray[newXParam, newYParam, 3];
                 }
             }
 
-            return dst;
         }
     }
 }

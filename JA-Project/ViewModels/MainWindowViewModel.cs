@@ -26,19 +26,15 @@ namespace JA_Project
 
         #region Public Properties
 
-        public long TimeInMiliSec { get; set; } = 20;
+        public long TimeInMiliSec { get; set; } = sizeof(float);
         public BitmapImage OriginalImage { get; set; }
         public BitmapImage ExtendedPicture { get; set; }
         public int ThreadsNumber { get; set; } = 1;
         public bool IfAsm { get; set; } 
         public bool IfCSharp { get; set; }
-        public double Scale { get; set; } = 2;
+        public float Scale { get; set; } = 2;
 
         #endregion
-
-
-        [DllImport(@"..\..\..\x64\Debug\AsmDll2.dll")]
-        public static extern unsafe void filterProc(IntPtr a, int lenght);
 
 
         #region Private variables
@@ -59,18 +55,6 @@ namespace JA_Project
 
         public MainWindowViewModel()
         {
-            int[] tab = new int[2] { 10, 20 };
-
-            IntPtr p = new IntPtr();
-
-            p = Marshal.AllocHGlobal(sizeof(int) * 2);
-
-            Marshal.Copy(tab, 0, p, 2);
-
-            filterProc(p, 2);
-
-            var one = Marshal.ReadInt32(p);
-            var two = Marshal.ReadInt32(p + 4);
 
             LoadPictureCommand = new RelayCommand(() => LoadPicture());
             ExtendPictureCommand = new RelayCommand(() => ExtendPicture());    
@@ -83,15 +67,18 @@ namespace JA_Project
         
         private void LoadPicture()
         {
-            OpenFileDialog ofdPicture = new OpenFileDialog();
-            ofdPicture.Filter = "Image files|*.bmp;*.jpg;*.gif;*.png;*.tif|All files|*.*";
-            ofdPicture.FilterIndex = 1;
+            //OpenFileDialog ofdPicture = new OpenFileDialog();
+            //ofdPicture.Filter = "Image files|*.bmp;*.jpg;*.gif;*.png;*.tif|All files|*.*";
+            //ofdPicture.FilterIndex = 1;
+            //
+            //if (ofdPicture.ShowDialog() == true)
+            //{
+            //    OriginalImage = new BitmapImage(new Uri(ofdPicture.FileName));
+            //    imagePath = ofdPicture.FileName;
+            //}
 
-            if (ofdPicture.ShowDialog() == true)
-            {
-                OriginalImage = new BitmapImage(new Uri(ofdPicture.FileName));
-                imagePath = ofdPicture.FileName;
-            }
+            OriginalImage = new BitmapImage(new Uri(@"C:\Users\zgadz\Downloads\file.png"));
+            imagePath = @"C:\Users\zgadz\Downloads\file.png";
 
             OnPropertyChanged("OriginalImage");
 
@@ -100,25 +87,14 @@ namespace JA_Project
         private void ExtendPicture()
         {
 
-            if (IfCSharp == true)
-            {
-                var watch = System.Diagnostics.Stopwatch.StartNew();
-                Bitmap bitmap = ImageExtender.Extend(imagePath, (float)Scale);
-                watch.Stop();
+            var dst = new Bitmap((int)(OriginalImage.Width * Scale), (int)(OriginalImage.Height * Scale));
 
-                TimeInMiliSec = watch.ElapsedMilliseconds;
+            TimeInMiliSec = ExtenderHelpers.Extend(ref dst, imagePath, Scale, IfAsm, IfCSharp, ThreadsNumber);
+            ExtendedPicture = dst.Bitmap2BitmapImage();
 
-                ExtendedPicture = bitmap.Bitmap2BitmapImage();
+            OnPropertyChanged("ExtendedPicture");
+            OnPropertyChanged("TimeInMiliSec");
 
-                OnPropertyChanged("ExtendedPicture");
-                OnPropertyChanged("TimeInMiliSec");
-            }
-
-            else if (IfAsm == true)
-            {
-                ThreadsNumber = 40;
-                OnPropertyChanged("ThreadsNumber");
-            }
         }
 
 
