@@ -77,8 +77,8 @@ namespace JA_Project
             //    imagePath = ofdPicture.FileName;
             //}
 
-            OriginalImage = new BitmapImage(new Uri(@"C:\Users\zgadz\Downloads\file.png"));
-            imagePath = @"C:\Users\zgadz\Downloads\file.png";
+            OriginalImage = new BitmapImage(new Uri(@"C:\Users\zgadz\Downloads\ostatni.jpg"));
+            imagePath = @"C:\Users\zgadz\Downloads\ostatni.jpg";
 
             OnPropertyChanged("OriginalImage");
 

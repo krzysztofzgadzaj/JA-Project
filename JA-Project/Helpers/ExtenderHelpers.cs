@@ -14,9 +14,8 @@ namespace JA_Project
     {
 
         [DllImport(@"..\..\..\x64\Debug\AsmDll2.dll")]
-        public static extern unsafe void filterProc(Byte* srcPtr, Byte* dstPtr, int dstWidth, int numberOfLines);
-        //public static extern unsafe void filterProc(IntPtr a, int size);
-        //public static extern unsafe void filterProc(IntPtr intPtr, IntPtr dstPtr, int xCounter, int yCounter, int dstWidth, int dstHeight);
+        public static extern unsafe void filterProc(Byte* srcPtr, Byte* dstPtr, float ratio, int dstWidth, int numberOfLines, int indexOfLine, int srcWidth);
+        //public static extern unsafe void filterProc(Byte* srcPtr, Byte* dstPtr, float ratio, int size);
 
         unsafe public static long Extend(ref Bitmap dst, string originalFilePath, float scale, bool ifAsm, bool ifCsharp, int threadsNumber)
         {
@@ -46,7 +45,6 @@ namespace JA_Project
 
                 return watch.ElapsedMilliseconds;
             }
-
             else if ( ifAsm == true )
             {
 
@@ -60,7 +58,7 @@ namespace JA_Project
 
                         int size = dstByteArray.GetLength(0) * dstByteArray.GetLength(1);
 
-                        filterProc(srcPtr, dstPtr, dstByteArray.GetLength(0), dstByteArray.GetLength(1));
+                        filterProc(srcPtr, dstPtr, ratio, dstByteArray.GetLength(0), dstByteArray.GetLength(1), 0, srcByteArray.GetLength(0));
 
                         watch.Stop();
 
@@ -69,10 +67,8 @@ namespace JA_Project
                         return watch.ElapsedMilliseconds;
 
                     }
-                }
-                
+                }   
             }
-
             else
             {
                 return 0;
