@@ -5,3 +5,4 @@ D:\Studia sem. 5\JA\JA-Project\JA-Project\C-Dll\obj\Debug\C-Dll.csproj.CoreCompi
 D:\Studia sem. 5\JA\JA-Project\JA-Project\C-Dll\obj\Debug\C-Dll.csproj.CopyComplete
 D:\Studia sem. 5\JA\JA-Project\JA-Project\C-Dll\obj\Debug\C-Dll.dll
 D:\Studia sem. 5\JA\JA-Project\JA-Project\C-Dll\obj\Debug\C-Dll.pdb
+D:\Studia sem. 5\JA\JA-Project\JA-Project\C-Dll\obj\Debug\C-Dll.csprojAssemblyReference.cache

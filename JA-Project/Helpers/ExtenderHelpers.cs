@@ -14,8 +14,7 @@ namespace JA_Project
     {
 
         [DllImport(@"..\..\..\x64\Debug\AsmDll2.dll")]
-        public static extern unsafe void filterProc(Byte* srcPtr, Byte* dstPtr, float ratio, int dstWidth, int numberOfLines, int indexOfLine, int srcWidth);
-        //public static extern unsafe void filterProc(Byte* srcPtr, Byte* dstPtr, float ratio, int size);
+        public static extern unsafe void ImageExtenderAsm(Byte* srcPtr, Byte* dstPtr, float ratio, float nvm, int srcHeight, int dstHeight, int indexOfLine, int numberOfLines);
 
         unsafe public static long Extend(ref Bitmap dst, string originalFilePath, float scale, bool ifAsm, bool ifCsharp, int threadsNumber)
         {
@@ -25,11 +24,11 @@ namespace JA_Project
             var srcByteArray = src.Bitmap2ByteArray();
             var dstByteArray = dst.Bitmap2ByteArray();
 
-            var partForThread = dst.Height / threadsNumber;
-            var index = 0;
-
             if (ifCsharp == true)
             {
+                var partForThread = dst.Height / threadsNumber;
+                var index = 0;
+
                 var watch = System.Diagnostics.Stopwatch.StartNew();
 
                 Parallel.For(0, threadsNumber, i =>
@@ -47,18 +46,24 @@ namespace JA_Project
             }
             else if ( ifAsm == true )
             {
-
                 fixed(Byte* srcPtr = &srcByteArray[0,0,0])
                 {
-
                     fixed(Byte* dstPtr = &dstByteArray[0, 0, 0])
                     {
+                        Byte* p1 = srcPtr;
+                        Byte* p2 = dstPtr;
+
+                        var partForThread = dst.Width / threadsNumber;
+                        var index = 0;
 
                         var watch = System.Diagnostics.Stopwatch.StartNew();
 
-                        int size = dstByteArray.GetLength(0) * dstByteArray.GetLength(1);
+                        Parallel.For(0, threadsNumber, i =>
+                        {
+                            index = i * partForThread;
+                            ImageExtenderAsm(p1, p2, ratio, 0, srcByteArray.GetLength(1), dstByteArray.GetLength(1), index, partForThread);
 
-                        filterProc(srcPtr, dstPtr, ratio, dstByteArray.GetLength(0), dstByteArray.GetLength(1), 0, srcByteArray.GetLength(0));
+                        });
 
                         watch.Stop();
 

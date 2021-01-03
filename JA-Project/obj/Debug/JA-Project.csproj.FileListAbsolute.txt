@@ -1,5 +1,6 @@
 D:\Studia sem. 5\JA\JA-Project\JA-Project\JA-Project\bin\Debug\JA-Project.exe.config
 D:\Studia sem. 5\JA\JA-Project\JA-Project\JA-Project\bin\Debug\JA-Project.exe
+D:\Studia sem. 5\JA\JA-Project\JA-Project\JA-Project\bin\Debug\JA-Project.pdb
 D:\Studia sem. 5\JA\JA-Project\JA-Project\JA-Project\bin\Debug\C-Dll.dll
 D:\Studia sem. 5\JA\JA-Project\JA-Project\JA-Project\bin\Debug\C-Dll.pdb
 D:\Studia sem. 5\JA\JA-Project\JA-Project\JA-Project\obj\Debug\JA-Project.csprojAssemblyReference.cache
@@ -17,4 +18,3 @@ D:\Studia sem. 5\JA\JA-Project\JA-Project\JA-Project\obj\Debug\JA-Project.csproj
 D:\Studia sem. 5\JA\JA-Project\JA-Project\JA-Project\obj\Debug\JA-Project.csproj.CopyComplete
 D:\Studia sem. 5\JA\JA-Project\JA-Project\JA-Project\obj\Debug\JA-Project.exe
 D:\Studia sem. 5\JA\JA-Project\JA-Project\JA-Project\obj\Debug\JA-Project.pdb
-D:\Studia sem. 5\JA\JA-Project\JA-Project\JA-Project\bin\Debug\JA-Project.pdb

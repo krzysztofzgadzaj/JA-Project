@@ -67,18 +67,16 @@ namespace JA_Project
         
         private void LoadPicture()
         {
-            //OpenFileDialog ofdPicture = new OpenFileDialog();
-            //ofdPicture.Filter = "Image files|*.bmp;*.jpg;*.gif;*.png;*.tif|All files|*.*";
-            //ofdPicture.FilterIndex = 1;
-            //
-            //if (ofdPicture.ShowDialog() == true)
-            //{
-            //    OriginalImage = new BitmapImage(new Uri(ofdPicture.FileName));
-            //    imagePath = ofdPicture.FileName;
-            //}
+            OpenFileDialog ofdPicture = new OpenFileDialog();
+            ofdPicture.Filter = "Image files|*.bmp;*.jpg;*.gif;*.png;*.tif|All files|*.*";
+            ofdPicture.FilterIndex = 1;
+            
+            if (ofdPicture.ShowDialog() == true)
+            {
+                OriginalImage = new BitmapImage(new Uri(ofdPicture.FileName));
+                imagePath = ofdPicture.FileName;
+            }
 
-            OriginalImage = new BitmapImage(new Uri(@"C:\Users\zgadz\Downloads\ostatni.jpg"));
-            imagePath = @"C:\Users\zgadz\Downloads\ostatni.jpg";
 
             OnPropertyChanged("OriginalImage");
 

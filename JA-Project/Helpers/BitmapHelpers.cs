@@ -10,7 +10,7 @@ using System.Windows.Media.Imaging;
 
 namespace JA_Project.Helpers
 {
-    public static class BitmapHelpers
+    unsafe public static class BitmapHelpers
     {
         public static BitmapImage Bitmap2BitmapImage(this Bitmap bitmap)
         {
@@ -30,7 +30,7 @@ namespace JA_Project.Helpers
             }
         }
 
-        public static Byte[,,] Bitmap2ByteArray (this Bitmap bitmap)
+        unsafe public static Byte[,,] Bitmap2ByteArray (this Bitmap bitmap)
         {
             var width = bitmap.Width;
             var height = bitmap.Height;
